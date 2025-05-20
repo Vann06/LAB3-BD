@@ -1,0 +1,9 @@
+streamlit
+psycopg2-binary
+pandas
+sqlalchemy
+xlsxwriter
+fpdf
+plotly
+psycopg2-binary
+sqlalchemy
