@@ -1,10 +1,13 @@
 from sqlalchemy import create_engine, MetaData, Table, inspect
 from sqlalchemy.exc import OperationalError
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+from core.config import DATABASE_URL
 
-DATABASE_URL= ""
 
 engine = create_engine(DATABASE_URL, echo=False)
+
+# Base declarativa para ORM
+Base = declarative_base()
 
 metadata = MetaData()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
