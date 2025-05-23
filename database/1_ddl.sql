@@ -36,3 +36,19 @@ CREATE TABLE eventos_participantes (
 );
 
 
+
+
+
+-- VIEWS 
+CREATE VIEW eventos_resumen AS
+SELECT 
+    e.id AS id_evento,
+    e.nombre AS nombre_evento,
+    e.fecha,
+    te.nombre AS tipo_evento,
+    COUNT(ep.id_persona) FILTER (WHERE ei.nombre = 'Confirmado') AS total_confirmados
+FROM eventos e
+JOIN tipo_evento te ON e.id_tipo_evento = te.id
+LEFT JOIN eventos_participantes ep ON ep.id_evento = e.id
+LEFT JOIN estado_inscripcion ei ON ep.id_estado_inscripcion = ei.id
+GROUP BY e.id, e.nombre, e.fecha, te.nombre;
