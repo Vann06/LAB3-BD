@@ -4,6 +4,7 @@ from models.tipo_evento import TipoEvento
 from models.participante import Participante
 from models.estado_inscripcion import EstadoInscripcion
 from utils.crud_eventos import create_evento
+from models.evento import EstadoEvento
 
 def pantalla():
     st.subheader("Crear Evento")
@@ -24,6 +25,8 @@ def pantalla():
         nombre = st.text_input("Nombre del evento")
         descripcion = st.text_area("Descripción")
         fecha = st.date_input("Fecha del evento")
+        estado_opciones = [e.value for e in EstadoEvento]
+        estado = st.selectbox("Estado del evento", estado_opciones)
 
         tipo_nombres = [t.nombre for t in tipos]
         tipo_nombre = st.selectbox("Tipo de evento", tipo_nombres)

@@ -58,50 +58,44 @@ INSERT INTO estado_inscripcion (nombre) VALUES
 ('Asistió');
 
 -- Inserción de datos en la tabla "eventos_participantes"
--- Algunos participantes asisten a múltiples eventos para demostrar relaciones múltiples
--- Ana García participa en 3 eventos
+-- Algunas personas participan en mas de un evento
 INSERT INTO eventos_participantes (id_evento, id_persona, id_estado_inscripcion) VALUES 
-(1, 1, 2), -- Ana en Conferencia IA (Confirmado)
-(8, 1, 5), -- Ana en Workshop PostgreSQL (Asistió)
-(12, 1, 2), -- Ana en Exposición Startups (Confirmado)
+(1, 1, 2), 
+(8, 1, 5), 
+(12, 1, 2), 
 
--- Carlos Rodríguez participa en 4 eventos
-(2, 2, 5), -- Carlos en Taller Web (Asistió)
-(4, 2, 5), -- Carlos en DataHack (Asistió)
-(8, 2, 2), -- Carlos en Workshop PostgreSQL (Confirmado)
-(13, 2, 2), -- Carlos en Taller Machine Learning (Confirmado)
 
--- María López participa en 2 eventos
-(1, 3, 5), -- María en Conferencia IA (Asistió)
-(3, 3, 5), -- María en Seminario BBDD (Asistió)
+(2, 2, 5), 
+(4, 2, 5), 
+(8, 2, 2), 
+(13, 2, 2), 
+(1, 3, 5), 
+(3, 3, 5), 
 
--- Juan Martínez participa en 3 eventos
-(4, 4, 5), -- Juan en DataHack (Asistió)
-(7, 4, 2), -- Juan en Connect Tech (Confirmado)
-(11, 4, 1), -- Juan en Hackathon IoT (Pendiente)
 
--- Laura Hernández participa en 2 eventos
-(3, 5, 5), -- Laura en Seminario BBDD (Asistió)
-(13, 5, 2), -- Laura en Taller Machine Learning (Confirmado)
+(4, 4, 5), 
+(7, 4, 2), 
+(11, 4, 1), 
 
--- Otros participantes con 1 o 2 eventos
-(5, 6, 5), -- Pedro en Expo Proyectos (Asistió)
-(6, 7, 5), -- Sofia en Debate Ética IA (Asistió)
-(9, 8, 2), -- Miguel en Conferencia Ciberseguridad (Confirmado)
-(10, 9, 2), -- Elena en Seminario Cloud (Confirmado)
-(2, 10, 5), -- David en Taller Web (Asistió)
-(5, 11, 5), -- Lucía en Expo Proyectos (Asistió)
-(7, 12, 2), -- Daniel en Connect Tech (Confirmado)
-(12, 13, 4), -- Carmen en Exposición Startups (Lista espera)
-(6, 14, 3), -- Jorge en Debate Ética IA (Cancelado)
-(10, 15, 1), -- Patricia en Seminario Cloud (Pendiente)
-(11, 16, 2), -- Roberto en Hackathon IoT (Confirmado)
-(9, 17, 1), -- Susana en Conf. Ciberseguridad (Pendiente)
-(4, 18, 2), -- Felipe en DataHack (Confirmado)
-(5, 19, 5), -- Gabriela en Expo Proyectos (Asistió)
-(8, 20, 4), -- Andrés en Workshop PostgreSQL (Lista espera)
-(1, 6, 5), -- Pedro en Conferencia IA (Asistió)
-(3, 8, 5), -- Miguel en Seminario BBDD (Asistió)
-(6, 10, 5), -- David en Debate Ética IA (Asistió)
-(13, 12, 2), -- Daniel en Taller Machine Learning (Confirmado)
-(9, 14, 1); -- Jorge en Conf. Ciberseguridad (Pendiente)
+(3, 5, 5), 
+(13, 5, 2), 
+
+(5, 6, 5), 
+(6, 7, 5), 
+(9, 8, 2), 
+(10, 9, 2), 
+(2, 10, 5), 
+(5, 11, 5), 
+(7, 12, 2), 
+(12, 13, 4), 
+(6, 14, 3), 
+(10, 15, 1), 
+(11, 16, 2), 
+(9, 17, 1), 
+(4, 18, 2), 
+(5, 19, 5),
+(8, 20, 4), 
+(1, 6, 5), 
+(6, 10, 5), 
+(13, 12, 2), 
+(9, 14, 1); 

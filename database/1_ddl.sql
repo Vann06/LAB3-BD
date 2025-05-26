@@ -1,4 +1,10 @@
 -- ddl.sql
+-- TIPOS PERSONALIZADOS
+CREATE DOMAIN email_valido AS VARCHAR(100) 
+    CHECK (VALUE ~ '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+
+CREATE TYPE estado_evento AS ENUM ('planificado', 'activo', 'cancelado', 'finalizado');
+
 
 CREATE TABLE tipo_evento (
   id SERIAL PRIMARY KEY,
@@ -11,14 +17,15 @@ CREATE TABLE eventos (
   nombre VARCHAR(100) NOT NULL,
   descripcion TEXT,
   fecha DATE NOT NULL,
-  id_tipo_evento INT REFERENCES tipo_evento(id)
+  id_tipo_evento INT REFERENCES tipo_evento(id),
+  estado estado_evento DEFAULT 'planificado'
 );
 
 CREATE TABLE participantes (
   id SERIAL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
-  correo VARCHAR(100) UNIQUE
+  correo email_valido UNIQUE
 );
 
 
